@@ -64,7 +64,7 @@
             <div class="or-sep">atau</div>
 
             <!-- Login form -->
-            <form action="/auth/local_login.php" method="post" class="mb-2">
+            <form action="." method="post" class="mb-2">
               <div class="mb-3">
                 <label class="form-label small-muted">Email</label>
                 <input name="email" type="email" class="form-control form-control-lg" placeholder="nama@contoh.com" required>
@@ -88,7 +88,7 @@
             <div class="add-space"></div>
 
             <!-- Register toggle -->
-            <div class="text-center small-muted mb-2">Belum punya akun?</div>
+            <div class="fs-20 text-center small-muted mb-2">Belum punya akun?</div>
             <div class="d-grid">
               <button class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#registerBox" aria-expanded="false">
                 Buat Akun Baru

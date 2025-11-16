@@ -1,33 +1,11 @@
 <section id="dashboard" class="py-4">
     <div class="container">
-        <!-- Top bar: title + actions -->
-        <div class="d-flex align-items-center justify-content-between mb-4">
-            <div>
-                <h2 class="mb-0">FindMe!</h2>
-                <small class="text-muted">Dashboard Lost & Found</small>
+        <!-- Action buttons - centered -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-md-8 col-lg-6 d-flex justify-content-center gap-5">
+                <a href="#" class="btn btn-success btn-lg"><i class="bi bi-check-circle-fill me-4"></i>Report Found</a>
+                <a href="#" class="btn btn-danger btn-lg"><i class="bi bi-x-circle-fill me-4"></i>Report Lost</a>
             </div>
-            <div class="d-flex align-items-center gap-2">
-                <div class="me-2 d-none d-md-block">
-                    <input class="form-control form-control-sm" type="search" placeholder="Cari laporan..." aria-label="Search">
-                </div>
-                <button class="btn btn-outline-primary btn-sm" id="btn-filter"><i class="bi bi-funnel-fill"></i></button>
-                <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-bell-fill"></i></button>
-                <div class="dropdown">
-                    <a class="btn btn-dark btn-sm rounded-circle dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-fill"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Action buttons -->
-        <div class="mb-4 d-flex gap-2">
-            <a href="#" class="btn btn-danger"><i class="bi bi-x-circle-fill me-2"></i>Report Lost</a>
-            <a href="#" class="btn btn-success"><i class="bi bi-check-circle-fill me-2"></i>Report Found</a>
         </div>
 
         <!-- Filters / stats -->
@@ -43,7 +21,7 @@
             <!-- example card (ulang / loop di server-side) -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="/assets/image/no_image.png" class="card-img-top" alt="thumbnail" style="object-fit:cover; height:160px;">
+                    <img src="../assets/image/no_profile.jpeg" class="card-img-top" alt="thumbnail" style="object-fit:cover; height:160px;">
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-2">
                             <h5 class="card-title mb-0">Dompet Kulit</h5>
@@ -64,7 +42,7 @@
             <!-- duplicate example cards -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="/assets/image/no_image.png" class="card-img-top" alt="thumbnail" style="object-fit:cover; height:160px;">
+                    <img src="../assets/image/no_profile.jpeg" class="card-img-top" alt="thumbnail" style="object-fit:cover; height:160px;">
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-2">
                             <h5 class="card-title mb-0">Kacamata Hitam</h5>

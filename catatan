@@ -1,0 +1,67 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['user'])) {
+    header('Location: ./?p=login');
+    exit;
+}
+
+$user = $_SESSION['user'];
+?>
+
+bagian edit_profile
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Redirect jika belum login
+if (!isset($_SESSION['user'])) {
+    header("Location: ./?p=login");
+    exit;
+}
+
+// Folder penyimpanan foto
+$uploadDir = "assets/image/user/";
+
+// Proses update profil
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_profile'])) {
+    $newName  = trim($_POST['nama'] ?? '');
+    $newEmail = trim($_POST['email'] ?? '');
+    $newRole  = trim($_POST['role'] ?? '');
+
+    // Upload foto (jika ada file diinput)
+    if (!empty($_FILES['foto']['name'])) {
+        $fotoName = basename($_FILES['foto']['name']);
+        $targetFile = $uploadDir . $fotoName;
+        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+        // Validasi file (hanya gambar)
+        $allowedTypes = ['jpg', 'jpeg', 'png', 'gif'];
+        if (in_array($imageFileType, $allowedTypes)) {
+            if (move_uploaded_file($_FILES['foto']['tmp_name'], $targetFile)) {
+                $_SESSION['user']['foto'] = $targetFile;
+            } else {
+                $error_message = "Gagal mengupload foto.";
+            }
+        } else {
+            $error_message = "Format file tidak valid. Gunakan JPG, PNG, atau GIF.";
+        }
+    }
+
+    // Validasi data
+    if ($newName === '' || $newEmail === '') {
+        $error_message = "Nama dan Email tidak boleh kosong.";
+    } else {
+        $_SESSION['user']['nama']  = $newName;
+        $_SESSION['user']['email'] = $newEmail;
+        $_SESSION['user']['role']  = $newRole;
+        $success_message = "Profil berhasil diperbarui!";
+    }
+}
+
+// Ambil data user dari session
+$user = $_SESSION['user'];
+?>
